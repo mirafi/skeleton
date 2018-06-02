@@ -19,7 +19,7 @@ import java.util.Properties;
 public class PersistenceConfig {
 
     public class DateConfig {
-       public final static String timeZone="GMT+6";
+        public final static String timeZone="GMT+6";
     }
 
     @Autowired
@@ -29,7 +29,7 @@ public class PersistenceConfig {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(restDataSource());
         sessionFactory.setPackagesToScan(
-                new String[] { "com.mirafi.sample.skeleton.entity"});
+                new String[] { "org.mirafi.sample.skeleton.entity"});
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
@@ -52,7 +52,7 @@ public class PersistenceConfig {
         return txManager;
     }
 
-    @Bean                       
+    @Bean
     public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
@@ -76,7 +76,7 @@ public class PersistenceConfig {
                  * Be extra careful with this configuration
                  * Could cause data damage
                  * */
-               // setProperty("hibernate.hbm2ddl.auto", "update");
+                // setProperty("hibernate.hbm2ddl.auto", "update");
             }
         };
     }
