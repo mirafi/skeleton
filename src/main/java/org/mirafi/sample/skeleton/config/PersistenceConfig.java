@@ -29,7 +29,7 @@ public class PersistenceConfig {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(restDataSource());
         sessionFactory.setPackagesToScan(
-                new String[] { "com.mirafi.sample.skeleton.entity"});
+                new String[] { "org.mirafi.sample.skeleton.entity"});
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
